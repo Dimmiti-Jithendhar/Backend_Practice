@@ -1,0 +1,169 @@
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20),
+    address TEXT,
+    role VARCHAR(20) DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO users (name, email, password, phone_number, address)
+VALUES
+    ('John Doe', 'johndoe@example.com', 'password123', '1234567890', '123 Main Street'),
+    ('Jane Smith', 'janesmith@example.com', 'password456', '9876543210', '456 Main Street'),
+    ('Alice Johnson', 'alicejohnson@example.com', 'password789', '5555555555', '789 Main Street'),
+    ('Bob Brown', 'bobbrown@example.com', 'password111', '1111111111', '111 Main Street'),
+    ('Charlie Chapman', 'charlie@example.com', 'password222', '2222222222', '222 Main Street');
+select * from users;
+
+
+
+
+
+CREATE TABLE buses (
+    bus_id SERIAL PRIMARY KEY,
+    bus_number VARCHAR(20) UNIQUE NOT NULL,
+    capacity INT NOT NULL,
+    amenities TEXT,
+    status VARCHAR(20) DEFAULT 'active',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO buses (bus_number, capacity, amenities)
+VALUES
+    ('123', 50, 'AC, Wi-Fi'),
+    ('456', 40, 'AC'),
+    ('789', 30, 'Wi-Fi'),
+    ('S012', 60, 'AC, Wi-Fi, TV'),
+    ('S345', 45, 'AC, USB ports');
+
+CREATE TABLE routes (
+    route_id SERIAL PRIMARY KEY,
+    route_name VARCHAR(100) NOT NULL,
+    source VARCHAR(100) NOT NULL,
+    destination VARCHAR(100) NOT NULL,
+    distance NUMERIC(10, 2), -- Adjust precision as needed
+    duration INTERVAL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO routes (route_name, source, destination, distance, duration)
+VALUES
+    ('Hyderabad to Bengaluru', 'Hyderabad', 'Bengaluru', 560.0, '8 hours'),
+    ('Mumbai to Delhi', 'Mumbai', 'Delhi', 1440.0, '24 hours'),
+    ('Chennai to Kolkata', 'Chennai', 'Kolkata', 1650.0, '27 hours'),
+    ('Kolkata to Guwahati', 'Kolkata', 'Guwahati', 515.0, '9 hours'),
+    ('Delhi to Jaipur', 'Delhi', 'Jaipur', 270.0, '5 hours');
+select * from routes;
+
+drop table routes;
+
+
+
+
+
+
+
+
+
+CREATE TABLE schedules (
+    schedule_id SERIAL PRIMARY KEY,
+    bus_id INTEGER REFERENCES buses(bus_id),
+    route_id INTEGER REFERENCES routes(route_id),
+    departure_time TIME,
+    arrival_time TIME,
+    price NUMERIC(10, 2), -- Adjust precision as needed
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO schedules (bus_id, route_id, departure_time, arrival_time, price)
+VALUES
+    (1, 1, '08:00:00', '16:00:00', 1000.00),
+    (2, 2, '10:00:00', '10:00:00', 1500.00),
+    (3, 3, '12:00:00', '12:00:00', 2000.00),
+    (4, 4, '14:00:00', '23:00:00', 800.00),
+    (5, 5, '16:00:00', '21:00:00', 500.00);
+select * from schedules;
+
+
+CREATE TABLE bookings (
+    booking_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(user_id),
+    schedule_id INTEGER REFERENCES schedules(schedule_id),
+    booking_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    payment_status VARCHAR(20) DEFAULT 'pending',
+    cancellation_reason TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO bookings (user_id, schedule_id)
+VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (5, 5);
+
+
+CREATE TABLE reviews (
+    review_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(user_id),
+    booking_id INTEGER REFERENCES bookings(booking_id),
+    rating INTEGER,
+    comment TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO reviews (user_id, booking_id, rating, comment)
+VALUES
+    (1, 1, 5, 'Had a great experience. Comfortable bus and friendly staff.'),
+    (2, 2, 4, 'Journey was smooth, but could have had better amenities.'),
+    (3, 3, 3, 'Bus was delayed by 30 minutes.'),
+    (4, 4, 5, 'Excellent service, highly recommended.'),
+    (5, 5, 2, 'Uncomfortable seats and long travel time.');
+
+
+CREATE TABLE customer_support (
+    ticket_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(user_id),
+    subject VARCHAR(100),
+    message TEXT,
+    status VARCHAR(20) DEFAULT 'pending',
+    resolved_at TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO customer_support (user_id, subject, message)
+VALUES
+    (1, 'Booking Cancellation', 'I would like to cancel my booking for schedule 2.'),
+    (2, 'Payment Issue', 'I am unable to complete the payment for my booking.'),
+    (3, 'Bus Delay', 'My bus for schedule 3 is running late.'),
+    (4, 'Feedback', 'I had a great experience with your service.'),
+    (5, 'Refund Request', 'I would like a refund for my canceled booking.');
+
+select * from customer_support;
+CREATE TABLE booking_history (
+    booking_history_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(user_id),
+    booking_id INTEGER REFERENCES bookings(booking_id),
+    booking_date TIMESTAMP,
+    total_fare NUMERIC(10, 2),
+    booking_status VARCHAR(20),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO booking_history (user_id, booking_id, booking_date, total_fare, booking_status)
+SELECT 
+    b.user_id,
+    b.booking_id,
+    b.booking_date,
+    b.price,
+    CASE WHEN b.booking_date < CURRENT_DATE THEN 'past' ELSE 'upcoming' END AS booking_status
+FROM bookings b;
+

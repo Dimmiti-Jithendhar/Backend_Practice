@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f04848;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body covers the full height */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px; /* Adjust this value to match header height if needed */
+}
+
+.login-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Adjust based on your needs */
+}
+
+.login-box {
+    width: 45%;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-box input, .login-box select {
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-box button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-box button:hover {
+    background-color: #0056b3;
+}
+
+.login-box p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-box a {
+    color: #007b
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Book My Bus</title>
+    <link rel="stylesheet" href="user_list.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Book My Bus Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="users_list.html">Home</a></li>
+                    <li><a href="add_admin.html">add_admin</a></li>
+                    <li><a href="users_list.html">users_list</a></li>
+                    <li><a href="home.html">sign_out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Admin Dashboard</h2>
+
+            <!-- User Management Buttons -->
+            <div class="admin-buttons">
+                <button id="addUserBtn">Add User</button>
+                <button id="updateUserBtn">Update User</button>
+                <button id="deleteUserBtn">Delete User</button>
+            </div>
+
+            <!-- User Table -->
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Book My Bus. All rights reserved.</p>
+    </footer>
+
+    <!-- Add User Modal -->
+    <div id="addUserModal" class="modal">
+        <div class="modal-content">
+            <span id="closeAddUserModal" class="close">&times;</span>
+            <h2>Add User</h2>
+            <form id="addUserForm">
+                <label for="addFirstName">First Name:</label>
+                <input type="text" id="addFirstName" required>
+                
+                <label for="addLastName">Last Name:</label>
+                <input type="text" id="addLastName" required>
+                
+                <label for="addMobile">Mobile:</label>
+                <input type="text" id="addMobile" required>
+                
+                <label for="addEmail">Email:</label>
+                <input type="email" id="addEmail" required>
+                
+                <label for="addGender">Gender:</label>
+                <select id="addGender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                
+                <label for="addPassword">Password:</label>
+                <input type="password" id="addPassword" required>
+                
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Update User Modal -->
+    <div id="updateUserModal" class="modal">
+        <div class="modal-content">
+            <span id="closeUpdateUserModal" class="close">&times;</span>
+            <h2>Update User</h2>
+            <form id="updateUserForm">
+                <label for="Email">Email:</label>
+                <input type="email" id="Email" required>
+
+                <label for="updateEmail">New Email:</label>
+                <input type="email" id="updateEmail" placeholder="enter only if you want new email">
+                
+                <label for="updateFirstName">First Name:</label>
+                <input type="text" id="updateFirstName">
+                
+                <label for="updateLastName">Last Name:</label>
+                <input type="text" id="updateLastName">
+                
+                <label for="updateMobile">Mobile:</label>
+                <input type="text" id="updateMobile">
+                
+                <label for="updateGender">Gender:</label>
+                <select id="updateGender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                
+                <label for="updatePassword">New Password:</label>
+                <input type="password" id="updatePassword">
+                
+                
+                
+                <button type="submit">Update User</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete User Modal -->
+    <div id="deleteUserModal" class="modal">
+        <div class="modal-content">
+            <span id="closeDeleteUserModal" class="close">&times;</span>
+            <h2>Delete User</h2>
+            <form id="deleteUserForm">
+                <label for="deleteMobile">Mobile:</label>
+                <input type="text" id="deleteMobile" required>
+                
+                <button type="submit">Delete User</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for handling user management -->
+    <script src="users_list.js"></script>
+</body>
+</html>

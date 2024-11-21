@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Admin - Book My Bus</title>
+    <link rel="stylesheet" href="add_admin.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Book My Bus Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="admin_dashboard.html">Home</a></li>
+                    <li><a href="add_admin.html" class="active">Add Admin</a></li>
+                    <li><a href="users_list.html">Users List</a></li>
+                    <li><a href="home.html">Sign Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Add Admin</h2>
+            <form id="addAdminForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+
+                <button type="submit">Add</button>
+                <div id="message"></div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Book My Bus. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for handling add admin functionality -->
+    <script src="add_admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.notifications {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#notification-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notification-content p {
+    margin: 0;
+}
+
+.mark-read {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.mark-read:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

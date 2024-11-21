@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #667470;
+    border-radius: 5px;
+}
+
+.hero {
+    background-color: #ee3030;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.feature {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the cards */
+.feature:hover {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Click effect for the cards */
+.feature:active {
+    transform: scale(0.98);
+}
+
+/* Call to Action Section */
+.cta {
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

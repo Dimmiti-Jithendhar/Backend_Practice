@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Book My Bus</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Book My Bus Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Create an Account</h2>
+            <form id="signupForm">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" autocomplete="given-name" required>
+                
+                <label for="lastname">Last Name</label>
+                <input type="text" id="lastname" name="lastname" autocomplete="family-name" required>
+                
+                <label for="mobile">Mobile</label>
+                <input type="tel" id="mobile" name="mobile" autocomplete="tel" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" autocomplete="sex" required>
+                    <option value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" autocomplete="new-password" required>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+            <p><a href="forgot_password.html">Forgot Password?</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Book My Bus. All rights reserved.</p>
+    </footer>
+    <script src="signup.js"></script>
+</body>
+</html>

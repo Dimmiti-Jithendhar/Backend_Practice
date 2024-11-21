@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Book My Bus</title>
+    <link rel="stylesheet" href="admin_dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Book My Bus Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="admin_dashboard.html">Home</a></li>
+                    <li><a href="add_admin.html">Add Admin</a></li>
+                    <li><a href="users_list.html">Users List</a></li>
+                    <li><a href="home.html">Sign Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Welcome to the Admin Dashboard</h2>
+            <p>Manage your application efficiently from here. Use the navigation menu to access different functionalities.</p>
+            
+            <section class="dashboard-cards">
+                <div class="card">
+                    <h3>Total Routes</h3>
+                    <p id="totalRoutes">Loading...</p>
+                </div>
+                <div class="card">
+                    <h3>Active Buses</h3>
+                    <p id="activeBuses">Loading...</p>
+                </div>
+                <div class="card">
+                    <h3>Bus Status</h3>
+                    <p id="busStatus">Loading...</p>
+                </div>
+                <div class="card">
+                    <h3>Buses per Route</h3>
+                    <p id="busesPerRoute">Loading...</p>
+                </div>
+                <div class="card">
+                    <h3>Recent Bookings</h3>
+                    <p id="recentBookings">Loading...</p>
+                </div>
+            </section>
+            
+            <section class="cta">
+                <h2>Ready to Manage?</h2>
+                <p>Explore the different sections to get started with managing routes, buses, and user activities.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Book My Bus. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for handling dynamic content -->
+    <script src="admin_dashboard.js"></script>
+</body>
+</html>

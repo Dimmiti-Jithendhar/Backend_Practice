@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Book My Bus</title>
+    <link rel="stylesheet" href="notifications.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Book My Bus Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="booking.html">Book Now</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="notifications">
+            <h1>Notifications</h1>
+            
+            <!-- Notification List -->
+            <ul id="notification-list">
+                <li class="notification-item">
+                    <div class="notification-content">
+                        <p>Your booking from New York to Boston has been confirmed. Check your email for details.</p>
+                    </div>
+                    <button class="mark-read" data-id="1">Mark as Read</button>
+                </li>
+                <li class="notification-item">
+                    <div class="notification-content">
+                        <p>We have a special offer for your next trip! Use code "SPECIAL10" at checkout.</p>
+                    </div>
+                    <button class="mark-read" data-id="2">Mark as Read</button>
+                </li>
+                <li class="notification-item">
+                    <div class="notification-content">
+                        <p>Your booking from Chicago to Detroit has been canceled. Please contact support for more information.</p>
+                    </div>
+                    <button class="mark-read" data-id="3">Mark as Read</button>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Book My Bus. All rights reserved.</p>
+    </footer>
+    <script src="notifications.js"></script>
+</body>
+</html>

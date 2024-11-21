@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f04848;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body covers the full height */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px; /* Adjust this value to match header height if needed */
+}
+
+/* Signup and Login Container */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    margin-bottom: 15px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
